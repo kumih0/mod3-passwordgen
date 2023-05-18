@@ -19,25 +19,26 @@ function writePassword() {
 
 }
 
-console.log(writePassword);
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 var wutDo= alert("Press the Generate Password button to start.");
 
 function generatePassword(){
-  passwordLength();
-  scattagories();
-  makeNewPass();
+  // passwordLength();
+  // scattagories();
+  // makeNewPass();
 
-  return makeNewPass;
+  // return makeNewPass;
 }
 
+var pLength = passwordLength();
+
 function passwordLength(){
-  // parseint converts string into number
     var pwlength = Number(prompt("Enter the desired length of your password (8-128 characters)"));
 // pwlength==NaN typeof pwlength!=="number"|| pwlength==NaN 
     if (pwlength>=8 && pwlength<=128) { 
+      console.log(pwlength);
       return pwlength;
     } else
     {  
@@ -45,9 +46,8 @@ function passwordLength(){
       passwordLength();
     }
 }
-console.log(passwordLength());
 
-// var pwArray = [scattagories()];
+var passArray = scattagories();
     //function time baybeeeeeeeee
 function scattagories(){
     var isBigLetters = confirm("Include UPPERCASE letters in your password?");
@@ -65,35 +65,37 @@ function scattagories(){
       if (isBigLetters==true) {
       pwArray=pwArray.concat(bigLetters); 
     }
-
+    
+    console.log(pwArray);
       if (isLilLetters==true) {
       pwArray=pwArray.concat(lilLetters);
     }
-
+    console.log(pwArray);
       if (isNumbers==true) {
       pwArray=pwArray.concat(numbahs);
     }
-
+    console.log(pwArray);
       if (isSpecial==true) {
       pwArray=pwArray.concat(specials);
     }
+    console.log(pwArray);
       return pwArray;
+      
    }
+   var newPass = makeNewPass();
 
-    console.log(scattagories);
-   
     function makeNewPass() {
+     //var passArray = [pwArray];
+     //var getRandom = passArray[Math.floor((Math.random() * newPass.length))];
+     var newPw = [];
+     var getRandom = Math.floor((Math.random() * passArray.length));
     
-     var newPass = [];
-     length = passwordLength;
-     var passArray = [scattagories];
-     var getRandom = passArray[Math.floor((Math.random() * newPass.length))];
-     
-     for (let i = 0; i < newPass.length; i++) {
-       newPass[i]= newPass.push(getRandom);
+     for (let i = 0; i < passwordLength; i++) {
+      newPw[i]= newPw.push(passArray[getRandom]);
+        
      }
-     console.log();
-     return newPass;
+
+     return newPw;
      }
 
 
