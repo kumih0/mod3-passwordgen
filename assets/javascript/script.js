@@ -38,13 +38,15 @@ function passwordLength(){
     }
 }
 console.log(passwordLength);
-var pwArray = [];
+// var pwArray = [scattagories()];
     //function time baybeeeeeeeee
 function scattagories(){
     var isBigLetters = confirm("Include UPPERCASE letters in your password?");
     var isLilLetters = confirm("Include lowercase letters in your password?");
     var isNumbers = confirm("Includes numbers in your passsword?");
     var isSpecial = confirm("Includes special characters in your password?");
+
+    var pwArray =[];
 
     if (isBigLetters!==true && isLilLetters!==true && isNumbers!==true && isSpecial!==true) {
       alert("You must select at least ONE category to generate a password.");
@@ -56,7 +58,7 @@ function scattagories(){
     }
 
       if (isLilLetters==true) {
-     pwArray=pwArray.concat(lilLetters);
+      pwArray=pwArray.concat(lilLetters);
     }
 
       if (isNumbers==true) {
@@ -64,16 +66,17 @@ function scattagories(){
     }
 
       if (isSpecial==true) {
-    pwArray=pwArray.concat(specials);
+      pwArray=pwArray.concat(specials);
     }
       return pwArray;
    }
 
-    console.log(pwArray);
+    console.log(scattagories());
 
     var newPass = [];
     length = passwordLength();
-    var getRandom = pwArray[Math.floor((Math.random() * newPass.length))];
+    var passArray = [scattagories()];
+    var getRandom = passArray[Math.floor((Math.random() * newPass.length))];
     
     for (let i = 0; i < newPass.length; i++) {
       newPass[i]= newPass.push(getRandom);
