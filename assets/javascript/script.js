@@ -30,6 +30,7 @@ function generatePassword(){
   // makeNewPass();
 
   // return makeNewPass;
+
 }
 
 var pLength = passwordLength();
