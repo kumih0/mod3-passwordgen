@@ -15,6 +15,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  
   passwordText.value = password;
 
 }
@@ -31,13 +32,15 @@ function generatePassword(){
   
   // return makeNewPass;
   var pLength = passwordLength();
+    if (pLength==null||pLength==undefined) {
+      return "thanks for playing :)";
+    }
   var passArray = scattagories();
   
-  var newPw = [];
-  var getRandom = Math.floor((Math.random() * passArray.length));
-  
-  for (let i = 0; i < pLength; i++) {
-   newPw[i]= newPw.push(passArray[getRandom]);
+  var newPw = "";
+  for (var i = 0; i < pLength; i++) {
+  var getRandom = Math.floor(Math.random() * passArray.length);
+   newPw += passArray[getRandom];
      
   }
   
@@ -54,7 +57,7 @@ function passwordLength(){
     } else
     {  
       alert("You've entered an invalid input. Please enter a number between 8-128.");
-      passwordLength();
+      return;
     }
 }
 
@@ -92,12 +95,6 @@ function scattagories(){
       return pwArray;
       
    }
-  //  var newPass = makeNewPass();
-
-  //   function makeNewPass() {
-  //    //var passArray = [pwArray];
-  //    //var getRandom = passArray[Math.floor((Math.random() * newPass.length))];
-  //    }
 
 
     
