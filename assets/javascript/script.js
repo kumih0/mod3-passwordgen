@@ -28,12 +28,22 @@ function generatePassword(){
   // passwordLength();
   // scattagories();
   // makeNewPass();
-
+  
   // return makeNewPass;
-
+  var pLength = passwordLength();
+  var passArray = scattagories();
+  
+  var newPw = [];
+  var getRandom = Math.floor((Math.random() * passArray.length));
+  
+  for (let i = 0; i < pLength; i++) {
+   newPw[i]= newPw.push(passArray[getRandom]);
+     
+  }
+  
+  return newPw;
 }
 
-var pLength = passwordLength();
 
 function passwordLength(){
     var pwlength = Number(prompt("Enter the desired length of your password (8-128 characters)"));
@@ -48,7 +58,6 @@ function passwordLength(){
     }
 }
 
-var passArray = scattagories();
     //function time baybeeeeeeeee
 function scattagories(){
     var isBigLetters = confirm("Include UPPERCASE letters in your password?");
@@ -83,21 +92,12 @@ function scattagories(){
       return pwArray;
       
    }
-   var newPass = makeNewPass();
+  //  var newPass = makeNewPass();
 
-    function makeNewPass() {
-     //var passArray = [pwArray];
-     //var getRandom = passArray[Math.floor((Math.random() * newPass.length))];
-     var newPw = [];
-     var getRandom = Math.floor((Math.random() * passArray.length));
-    
-     for (let i = 0; i < passwordLength; i++) {
-      newPw[i]= newPw.push(passArray[getRandom]);
-        
-     }
-
-     return newPw;
-     }
+  //   function makeNewPass() {
+  //    //var passArray = [pwArray];
+  //    //var getRandom = passArray[Math.floor((Math.random() * newPass.length))];
+  //    }
 
 
     
