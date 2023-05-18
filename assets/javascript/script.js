@@ -28,7 +28,7 @@ function generatePassword(){
 
 function passwordLength(){
   // parseint converts string into number
-    var pwlength = parseInt(prompt("Enter the desired length of your password (8-128 characters)"));
+    var pwlength = prompt("Enter the desired length of your password (8-128 characters)");
 // pwlength==NaN typeof pwlength!=="number"|| pwlength==NaN 
     if (pwlength>=8 || pwlength<=128) { 
       return passwordLength();
@@ -38,6 +38,7 @@ function passwordLength(){
     }
 }
 console.log(passwordLength);
+passwordLength()=parseInt(passwordLength);
 // var pwArray = [scattagories()];
     //function time baybeeeeeeeee
 function scattagories(){
