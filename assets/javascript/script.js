@@ -23,11 +23,14 @@ console.log(writePassword);
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+var wutDo= alert("Press the Generate Password button to start.");
 
 function generatePassword(){
   passwordLength();
   scattagories();
   makeNewPass();
+
+  return makeNewPass;
 }
 
 function passwordLength(){
@@ -42,7 +45,7 @@ function passwordLength(){
       passwordLength();
     }
 }
-console.log(passwordLength);
+console.log(passwordLength());
 
 // var pwArray = [scattagories()];
     //function time baybeeeeeeeee
@@ -82,14 +85,14 @@ function scattagories(){
     function makeNewPass() {
     
      var newPass = [];
-     length = passwordLength();
+     length = passwordLength;
      var passArray = [scattagories];
      var getRandom = passArray[Math.floor((Math.random() * newPass.length))];
      
      for (let i = 0; i < newPass.length; i++) {
        newPass[i]= newPass.push(getRandom);
      }
-     console.log(newPass.value);
+     console.log();
      return newPass;
      }
 
