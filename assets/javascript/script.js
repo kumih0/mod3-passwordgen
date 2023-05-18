@@ -67,7 +67,7 @@ function scattagories(){
     pwArray=pwArray.concat(specials);
     }
       return pwArray;
-  }
+   }
 
     console.log(pwArray);
 
