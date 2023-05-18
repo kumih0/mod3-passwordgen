@@ -1,4 +1,8 @@
-var 
+var bigLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var lilLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j","k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// var lilLetters = bigLetters[].toLowercase()???
+var numbahs = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var specials = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "|", "}", "~"];
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -19,14 +23,18 @@ console.log(writePassword);
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword(){
+}
 
+function passwordLength(){
     var pwlength = prompt("Enter the desired length of your password (8-128 characters)");
-
-    if (typeof pwlength!=="number"|| pwlength.value<8 || pwlength.value>128) {
+// pwlength==NaN typeof pwlength!=="number"|| pwlength==NaN 
+    if (pwlength>=8 || pwlength<=128) { 
+      return passwordLength();
+    } else{
       alert("You've entered an invalid input. Please enter a number between 8-128.");
-      return generatePassword();
+      passwordLength();
     }
-
+}
     var isBigLetters = confirm("Include UPPERCASE letters in your password?");
     var isLilLetters = confirm("Include lowercase letters in your password?");
     var isNumbers = confirm("Includes numbers in your passsword?");
@@ -34,13 +42,13 @@ function generatePassword(){
 
     if (isBigLetters!==true && isLilLetters!==true && isNumbers!==true && isSpecial!==true) {
       alert("You must select at least ONE category to generate a password.");
-      return generatePassword();
-    } else {
-      
+      generatePassword();
+    } else if(){
+
     }
    
 
-}
+
 
 
 
