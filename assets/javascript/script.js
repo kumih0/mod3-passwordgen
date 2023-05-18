@@ -25,20 +25,25 @@ console.log(writePassword);
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword(){
+  passwordLength();
+  scattagories();
+  makeNewPass();
+}
 
 function passwordLength(){
   // parseint converts string into number
-    var pwlength = prompt("Enter the desired length of your password (8-128 characters)");
+    var pwlength = Number(prompt("Enter the desired length of your password (8-128 characters)"));
 // pwlength==NaN typeof pwlength!=="number"|| pwlength==NaN 
-    if (pwlength>=8 || pwlength<=128) { 
-      return passwordLength();
-    } else{
+    if (pwlength>=8 && pwlength<=128) { 
+      return pwlength;
+    } else
+    {  
       alert("You've entered an invalid input. Please enter a number between 8-128.");
       passwordLength();
     }
 }
 console.log(passwordLength);
-passwordLength()=parseInt(passwordLength);
+
 // var pwArray = [scattagories()];
     //function time baybeeeeeeeee
 function scattagories(){
@@ -72,19 +77,21 @@ function scattagories(){
       return pwArray;
    }
 
-    console.log(scattagories());
-
-    var newPass = [];
-    length = passwordLength();
-    var passArray = [scattagories()];
-    var getRandom = passArray[Math.floor((Math.random() * newPass.length))];
+    console.log(scattagories);
+   
+    function makeNewPass() {
     
-    for (let i = 0; i < newPass.length; i++) {
-      newPass[i]= newPass.push(getRandom);
-    }
-    console.log(newPass.value);
-    return generatePassword();
-  }
+     var newPass = [];
+     length = passwordLength();
+     var passArray = [scattagories];
+     var getRandom = passArray[Math.floor((Math.random() * newPass.length))];
+     
+     for (let i = 0; i < newPass.length; i++) {
+       newPass[i]= newPass.push(getRandom);
+     }
+     console.log(newPass.value);
+     return newPass;
+     }
 
 
     
