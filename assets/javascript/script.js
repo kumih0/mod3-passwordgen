@@ -4,6 +4,8 @@ var lilLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j","k", "l", "m"
 var numbahs = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var specials = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "|", "}", "~"];
 
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -23,10 +25,10 @@ console.log(writePassword);
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword(){
-}
 
 function passwordLength(){
-    var pwlength = prompt("Enter the desired length of your password (8-128 characters)");
+  // parseint converts string into number
+    var pwlength = parseInt(prompt("Enter the desired length of your password (8-128 characters)"));
 // pwlength==NaN typeof pwlength!=="number"|| pwlength==NaN 
     if (pwlength>=8 || pwlength<=128) { 
       return passwordLength();
@@ -35,6 +37,10 @@ function passwordLength(){
       passwordLength();
     }
 }
+console.log(passwordLength);
+var pwArray = [];
+    //function time baybeeeeeeeee
+function scattagories(){
     var isBigLetters = confirm("Include UPPERCASE letters in your password?");
     var isLilLetters = confirm("Include lowercase letters in your password?");
     var isNumbers = confirm("Includes numbers in your passsword?");
@@ -42,10 +48,44 @@ function passwordLength(){
 
     if (isBigLetters!==true && isLilLetters!==true && isNumbers!==true && isSpecial!==true) {
       alert("You must select at least ONE category to generate a password.");
-      generatePassword();
-    } else if(){
+      scattagories();
+      } else
 
+      if (isBigLetters==true) {
+      pwArray=pwArray.concat(bigLetters); 
     }
+
+      if (isLilLetters==true) {
+     pwArray=pwArray.concat(lilLetters);
+    }
+
+      if (isNumbers==true) {
+      pwArray=pwArray.concat(numbahs);
+    }
+
+      if (isSpecial==true) {
+    pwArray=pwArray.concat(specials);
+    }
+      return pwArray;
+  }
+
+    console.log(pwArray);
+
+    var newPass = [];
+    length = passwordLength();
+    var getRandom = pwArray[Math.floor((Math.random() * newPass.length))];
+    
+    for (let i = 0; i < newPass.length; i++) {
+      newPass[i]= newPass.push(getRandom);
+    }
+    console.log(newPass.value);
+    return generatePassword();
+  }
+
+
+    
+    
+  
    
 
 
