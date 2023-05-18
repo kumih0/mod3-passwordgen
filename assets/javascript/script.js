@@ -1,3 +1,5 @@
+var 
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -26,7 +28,14 @@ function generatePassword(){
     }
 
     var isBigLetters = confirm("Include UPPERCASE letters in your password?");
-    if (isBigLetters!==) {
+    var isLilLetters = confirm("Include lowercase letters in your password?");
+    var isNumbers = confirm("Includes numbers in your passsword?");
+    var isSpecial = confirm("Includes special characters in your password?");
+
+    if (isBigLetters!==true && isLilLetters!==true && isNumbers!==true && isSpecial!==true) {
+      alert("You must select at least ONE category to generate a password.");
+      return generatePassword();
+    } else {
       
     }
    
