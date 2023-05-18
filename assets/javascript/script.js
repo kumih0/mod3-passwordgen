@@ -1,15 +1,12 @@
+//defining the arrays for uppercase, lowercase, numbers, and special characters for the password to be generated from
 var bigLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lilLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j","k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// var lilLetters = bigLetters[].toLowercase()???
 var numbahs = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var specials = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "|", "}", "~"];
-
-
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-console.log(generateBtn);
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -19,24 +16,20 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 var wutDo= alert("Press the Generate Password button to start.");
 
+//defined vars inside generatePassword function to call other functions and store the result
 function generatePassword(){
-  // passwordLength();
-  // scattagories();
-  // makeNewPass();
-  
-  // return makeNewPass;
   var pLength = passwordLength();
+  //if user hits cancel on first prompt, this terminates function and enters a message in the generate password box
     if (pLength==null||pLength==undefined) {
       return "thanks for playing :)";
     }
   var passArray = scattagories();
   
+  //declared newPw var as a string so that it prints each character consecutively rather than as individual items in an array; to get rid of password being generated with commas in it
   var newPw = "";
   for (var i = 0; i < pLength; i++) {
   var getRandom = Math.floor(Math.random() * passArray.length);
@@ -47,10 +40,10 @@ function generatePassword(){
   return newPw;
 }
 
-
+//broke generating password into steps organized by prompts taken from the user; done to organize self with testing/debugging code and create better loops back to relevant prompt rather than the start
 function passwordLength(){
     var pwlength = Number(prompt("Enter the desired length of your password (8-128 characters)"));
-// pwlength==NaN typeof pwlength!=="number"|| pwlength==NaN 
+
     if (pwlength>=8 && pwlength<=128) { 
       console.log(pwlength);
       return pwlength;
@@ -61,7 +54,7 @@ function passwordLength(){
     }
 }
 
-    //function time baybeeeeeeeee
+//combines category arrays into an array of characters to choose from based on choices from user 
 function scattagories(){
     var isBigLetters = confirm("Include UPPERCASE letters in your password?");
     var isLilLetters = confirm("Include lowercase letters in your password?");
@@ -95,45 +88,3 @@ function scattagories(){
       return pwArray;
       
    }
-
-
-    
-    
-  
-   
-
-
-
-
-
-
-// Write password to the #password input
-// function writePassword() {
-//   // alert("working")
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
-// function generatePassword(){
-//   return "hello"
-// }
- 
-
-//ask for length of a password
-  //prompt
-  //save it to a variable
-//check the length provided by user is a number and in between 8 and 128
-  
-//confirm : 4 for uppercase, lowercase, numbers, special characters
-  // save it to a variable
-//check if one of the  uppercase or lowercase or num or sp char is there
-   // combine the confirmed arrays
-// create an array for uppercase letters, lowercase letters....
-//create an array variable to have a new password with length provided by user. []
-//random item from combined array and push it to new password array and do this step up to the length of user input.
