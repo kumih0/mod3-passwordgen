@@ -52,7 +52,7 @@ function passwordLength(){
       alert("You've entered an invalid input. Please enter a number between 8-128.");
        if (pwlength==0){
          return;
-       } else
+       } 
        return passwordLength();
     }
 }
