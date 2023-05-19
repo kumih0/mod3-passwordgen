@@ -45,12 +45,15 @@ function passwordLength(){
     var pwlength = Number(prompt("Enter the desired length of your password (8-128 characters)"));
 
     if (pwlength>=8 && pwlength<=128) { 
-      console.log(pwlength);
+
       return pwlength;
     } else
     {  
       alert("You've entered an invalid input. Please enter a number between 8-128.");
-      return;
+       if (pwlength==0){
+         return;
+       } else
+       return passwordLength();
     }
 }
 
@@ -72,19 +75,19 @@ function scattagories(){
       pwArray=pwArray.concat(bigLetters); 
     }
     
-    console.log(pwArray);
+
       if (isLilLetters==true) {
       pwArray=pwArray.concat(lilLetters);
     }
-    console.log(pwArray);
+
       if (isNumbers==true) {
       pwArray=pwArray.concat(numbahs);
     }
-    console.log(pwArray);
+
       if (isSpecial==true) {
       pwArray=pwArray.concat(specials);
     }
-    console.log(pwArray);
+
       return pwArray;
       
    }
