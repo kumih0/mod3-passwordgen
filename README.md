@@ -49,6 +49,7 @@ THEN the password is either displayed in an alert or written to the page
 
 ```
 # Screenshot of Website
+![03-javascript-homework-demo](https://github.com/kumih0/mod3-passwordgen/assets/132851569/1b60586d-2104-42a7-bbf6-ddabe9dfdd2e)
 
 # Deployed Link
-
+https://kumih0.github.io/mod3-passwordgen/
